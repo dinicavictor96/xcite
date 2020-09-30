@@ -1,0 +1,23 @@
+<ion-app style="--background: #2C2C2C;">
+  <ion-split-pane contentId="main-content" style="--background: #2C2C2C;">
+    <ion-menu contentId="main-content" type="overlay" style="--background: #2C2C2C;">
+      <ion-content style="--background: #2C2C2C;">
+        <ion-list id="inbox-list" style="--background: #2C2C2C; padding: 0 !important; margin-top: 20px;">
+          <ion-item style="padding-bottom: 40px;" style="--background: #2C2C2C; border-radius: 0;" >
+            <ion-avatar style="width:71px; height:71px" slot="start">
+              <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+            </ion-avatar>
+            <ion-label><h1 style="color: white;">Alexandra</h1></ion-label>
+          </ion-item>
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index" style="--background: #2C2C2C;">
+            <ion-item style="--background: #2C2C2C; color: white; border-radius: 0;" (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
+              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content" style="--background: #2C2C2C;"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

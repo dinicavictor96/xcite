@@ -1,0 +1,9 @@
+{
+  "name": "x-cite",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "61f6c6d7"
+}
